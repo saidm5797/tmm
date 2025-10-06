@@ -1,0 +1,59 @@
+{
+  // Onshape URL of the assembly
+  "url": "https://cad.onshape.com/documents/c9ddad3c007d08664107996c/w/350c04004bd3bd4941320b74/e/532e46fc895634749a64526d",
+  
+  // Output format
+  "output_format": "urdf",
+
+  // Parts to ignore (default: {})
+  "ignore": {
+    // Ignore visual for these parts
+    "WaveShare_Mounting_Plate_SO101": "all",
+    "waveshare_bus_servo_driver": "all",
+    "SO101 Assembly - Base_08p v18": "all",
+    "SO101 Assembly - Motor_holder_SO101_Base v6": "all",
+    "SO101 Assembly - Motor_holder_SO101_Wrist v8": "all"
+  },
+
+  // More options available in processors
+  // Override joint properties (default: {})
+  "joint_properties": {
+    // Set the properties for a specific joint
+    "SO101_joint1": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint2": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint3": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint4": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint5": {
+      "type": "continuous",
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint6": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    }
+  },
+    
+  // Add a dummy base link (default: false)
+  "add_dummy_base_link": true,
+  
+  // Merge STL meshes (default: false)
+  "merge_stls": true,
+  
+  // Simplify STL meshes (default: false)
+  "simplify_stls": true,
+  // Maximum size of the STL files in MB (default: 3)
+  "max_stl_size": 1
+}
