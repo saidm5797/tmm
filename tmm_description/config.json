@@ -1,0 +1,32 @@
+{
+  // Onshape URL of the assembly
+  "url": "https://cad.onshape.com/documents/c9ddad3c007d08664107996c/w/350c04004bd3bd4941320b74/e/b4e094e05a97a86b7b603818",
+  
+  // Output format
+  "output_format": "urdf",
+
+  // Parts to ignore (default: {})
+  "ignore": {
+    // Ignore visual for these parts
+    "roller_assembly": "all",
+    "M3-45_Aluminum Male-Female Threaded Hex Standoff": "all",
+    "WJ-ZJZH-0005": "all",
+    "WaveShare_Mounting_Plate_SO101": "all",
+    "waveshare_bus_servo_driver": "all",
+    "SO101 Assembly - Base_08p v18": "all",
+    "SO101 Assembly - Motor_holder_SO101_Base v6": "all",
+    "SO101 Assembly - Motor_holder_SO101_Wrist v8": "all"
+  },
+
+  // More options available in processors
+  // Add a dummy base link (default: false)
+  "add_dummy_base_link": true,
+  
+  // Merge STL meshes (default: false)
+  "merge_stls": true,
+  
+  // Simplify STL meshes (default: false)
+  "simplify_stls": true,
+  // Maximum size of the STL files in MB (default: 3)
+  "max_stl_size": 1
+}

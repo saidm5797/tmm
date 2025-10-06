@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "47fcaa2dffbce108927de7cd",
+    "documentMicroversion": "0b0735a5f0ce0f396acc8d60",
+    "documentVersion": "af5a2bda7d49609fe836edf4",
+    "elementId": "12ab58cc1dca975d5af256ba",
+    "fullConfiguration": "default",
+    "id": "MJBtB927IOhw1J6K2",
+    "isStandardContent": false,
+    "name": "SO101 Assembly - Motor_holder_SO101_Base v6 <1>",
+    "partId": "JFH",
+    "suppressed": false,
+    "type": "Part"
+}

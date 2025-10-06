@@ -1,0 +1,365 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/c9ddad3c007d08664107996c/w/350c04004bd3bd4941320b74/e/b4e094e05a97a86b7b603818 -->
+<robot name="tmm_description">
+  <!-- Link base_link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link lidar -->
+  <link name="lidar">
+    <inertial>
+      <origin xyz="-0.615383 -0.491241 -0.00526257" rpy="0 0 0"/>
+      <mass value="1.9494"/>
+      <inertia ixx="0.0626313" ixy="0.00037454" ixz="-5.41672e-05" iyy="0.0186825" iyz="0.00670576" izz="0.0576434"/>
+    </inertial>
+    <!-- Part lidar_parts -->
+    <visual>
+      <origin xyz="-0.615383 -0.491241 -0.00526257" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/lidar_visual.stl"/>
+      </geometry>
+      <material name="lidar_parts_material">
+        <color rgba="0.693585 0.740165 0.82549 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.615383 -0.491241 -0.00526257" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/lidar_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link left_sprocket -->
+  <link name="left_sprocket">
+    <inertial>
+      <origin xyz="1.86118e-10 0.00030817 -0.0206653" rpy="0 0 0"/>
+      <mass value="0.024"/>
+      <inertia ixx="4.65199e-06" ixy="2.54549e-14" ixz="-3.82091e-14" iyy="4.66831e-06" iyz="9.66198e-09" izz="5.63636e-06"/>
+    </inertial>
+    <!-- Part left_sprocket_parts -->
+    <visual>
+      <origin xyz="1.86118e-10 0.00030817 -0.0206653" rpy="-2.14951 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/left_sprocket_visual.stl"/>
+      </geometry>
+      <material name="left_sprocket_parts_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.86118e-10 0.00030817 -0.0206653" rpy="-2.14951 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/left_sprocket_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from lidar to left_sprocket -->
+  <joint name="left_sprocket_joint" type="revolute">
+    <origin xyz="-0.543758 -0.604353 -0.103839" rpy="1.5708 0.57871 -1.5708"/>
+    <parent link="lidar"/>
+    <child link="left_sprocket"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link right_sprocket -->
+  <link name="right_sprocket">
+    <inertial>
+      <origin xyz="1.86118e-10 -0.00030817 0.0206653" rpy="0 0 0"/>
+      <mass value="0.024"/>
+      <inertia ixx="4.65199e-06" ixy="-2.54549e-14" ixz="3.82091e-14" iyy="4.66831e-06" iyz="9.66198e-09" izz="5.63636e-06"/>
+    </inertial>
+    <!-- Part right_sprocket_parts -->
+    <visual>
+      <origin xyz="1.86118e-10 -0.00030817 0.0206653" rpy="0.992087 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/right_sprocket_visual.stl"/>
+      </geometry>
+      <material name="right_sprocket_parts_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.86118e-10 -0.00030817 0.0206653" rpy="0.992087 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/right_sprocket_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from lidar to right_sprocket -->
+  <joint name="right_sprocket_joint" type="revolute">
+    <origin xyz="-0.68506 -0.604353 -0.103839" rpy="-1.5708 -0.57871 1.5708"/>
+    <parent link="lidar"/>
+    <child link="right_sprocket"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link gimbal_link_1 -->
+  <link name="gimbal_link_1">
+    <inertial>
+      <origin xyz="-1.1392e-16 -0.0266 -0.01865" rpy="0 0 0"/>
+      <mass value="0.026"/>
+      <inertia ixx="8.34189e-06" ixy="7.79865e-22" ixz="-6.16099e-23" iyy="8.5376e-06" iyz="7.82536e-22" izz="8.34189e-06"/>
+    </inertial>
+    <!-- Part gimbal_link_1_parts -->
+    <visual>
+      <origin xyz="-1.11022e-16 -0.0266 -0.01865" rpy="1.74311e-09 1.06378e-08 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/merged/gimbal_link_1_visual.stl"/>
+      </geometry>
+      <material name="gimbal_link_1_parts_material">
+        <color rgba="0.996078 0.996078 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-1.11022e-16 -0.0266 -0.01865" rpy="1.74311e-09 1.06378e-08 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/merged/gimbal_link_1_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link stereo_camera -->
+  <link name="stereo_camera">
+    <inertial>
+      <origin xyz="0.000210727 0.0220651 -0.0189276" rpy="0 0 0"/>
+      <mass value="0.092"/>
+      <inertia ixx="4.86128e-05" ixy="-9.49647e-07" ixz="-1.38378e-08" iyy="2.16153e-05" iyz="3.32725e-07" izz="3.52232e-05"/>
+    </inertial>
+    <!-- Part stereo_camera_parts -->
+    <visual>
+      <origin xyz="0.000210727 0.0220651 -0.0189276" rpy="1.74311e-09 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/stereo_camera_visual.stl"/>
+      </geometry>
+      <material name="stereo_camera_parts_material">
+        <color rgba="0.719906 0.82792 0.923657 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.000210727 0.0220651 -0.0189276" rpy="1.74311e-09 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/stereo_camera_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from gimbal_link_1 to stereo_camera -->
+  <joint name="gimbal_joint2" type="revolute">
+    <origin xyz="-0.01865 -0.0532 -0.01865" rpy="3.14159 1.5708 0"/>
+    <parent link="gimbal_link_1"/>
+    <child link="stereo_camera"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.95477" upper="1.95477"/>
+  </joint>
+  <!-- Joint from lidar to gimbal_link_1 -->
+  <joint name="gimbal_joint1" type="revolute">
+    <origin xyz="-0.614052 -0.125414 -0.0274405" rpy="1.74311e-09 1.06378e-08 -3.14159"/>
+    <parent link="lidar"/>
+    <child link="gimbal_link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.95477" upper="1.95477"/>
+  </joint>
+  <!-- Link so101_link_1 -->
+  <link name="so101_link_1">
+    <inertial>
+      <origin xyz="-0.000165008 0.0310649 -0.0520534" rpy="0 0 0"/>
+      <mass value="0.170657"/>
+      <inertia ixx="0.000167933" ixy="-1.12486e-07" ixz="-4.75243e-07" iyy="0.00016665" iyz="4.27267e-06" izz="4.29912e-05"/>
+    </inertial>
+    <!-- Part so101_link_1_parts -->
+    <visual>
+      <origin xyz="-0.000165008 0.0310649 -0.0520534" rpy="-1.5708 -1.40416e-08 -1.06378e-08"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_1_visual.stl"/>
+      </geometry>
+      <material name="so101_link_1_parts_material">
+        <color rgba="0.831881 0.878758 0.905322 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000165008 0.0310649 -0.0520534" rpy="-1.5708 -1.40416e-08 -1.06378e-08"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_1_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link so101_link_2 -->
+  <link name="so101_link_2">
+    <inertial>
+      <origin xyz="0.0769789 0.00423782 -0.0196519" rpy="0 0 0"/>
+      <mass value="0.21477"/>
+      <inertia ixx="9.05913e-05" ixy="-3.29032e-05" ixz="1.38057e-06" iyy="0.000363802" iyz="2.31878e-07" izz="0.000329259"/>
+    </inertial>
+    <!-- Part so101_link_2_parts -->
+    <visual>
+      <origin xyz="0.0769789 0.00423782 -0.0196519" rpy="0.00872665 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_2_visual.stl"/>
+      </geometry>
+      <material name="so101_link_2_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0769789 0.00423782 -0.0196519" rpy="0.00872665 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_2_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link so101_link_3 -->
+  <link name="so101_link_3">
+    <inertial>
+      <origin xyz="-0.0822745 0.00188177 -0.0198362" rpy="0 0 0"/>
+      <mass value="0.201556"/>
+      <inertia ixx="6.5573e-05" ixy="1.4058e-05" ixz="2.43628e-06" iyy="0.000363228" iyz="-3.00554e-08" izz="0.000323237"/>
+    </inertial>
+    <!-- Part so101_link_3_parts -->
+    <visual>
+      <origin xyz="-0.0822745 0.00188177 -0.0198362" rpy="0.00872665 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_3_visual.stl"/>
+      </geometry>
+      <material name="so101_link_3_parts_material">
+        <color rgba="0.903751 0.649809 0.324098 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0822745 0.00188177 -0.0198362" rpy="0.00872665 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_3_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link so101_link_4 -->
+  <link name="so101_link_4">
+    <inertial>
+      <origin xyz="0.000402925 0.036769 -0.0109621" rpy="0 0 0"/>
+      <mass value="0.108342"/>
+      <inertia ixx="5.74063e-05" ixy="-1.29677e-07" ixz="-1.4595e-08" iyy="3.86465e-05" iyz="-6.71351e-06" izz="3.21549e-05"/>
+    </inertial>
+    <!-- Part so101_link_4_parts -->
+    <visual>
+      <origin xyz="0.000402925 0.036769 -0.0109621" rpy="-1.56207 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_4_visual.stl"/>
+      </geometry>
+      <material name="so101_link_4_parts_material">
+        <color rgba="0.667871 0.741711 0.783554 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.000402925 0.036769 -0.0109621" rpy="-1.56207 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_4_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link so101_link_5 -->
+  <link name="so101_link_5">
+    <inertial>
+      <origin xyz="-0.000332731 0.00402807 0.0260595" rpy="0 0 0"/>
+      <mass value="0.138789"/>
+      <inertia ixx="8.20111e-05" ixy="-3.60772e-07" ixz="1.03728e-07" iyy="5.53962e-05" iyz="-1.23742e-05" izz="5.70728e-05"/>
+    </inertial>
+    <!-- Part so101_link_5_parts -->
+    <visual>
+      <origin xyz="-0.000332731 0.00402807 0.0260595" rpy="0.00868857 1.07594e-08 -3.12414"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_5_visual.stl"/>
+      </geometry>
+      <material name="so101_link_5_parts_material">
+        <color rgba="0.69062 0.848271 0.94094 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000332731 0.00402807 0.0260595" rpy="0.00868857 1.07594e-08 -3.12414"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_5_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link so101_link_6 -->
+  <link name="so101_link_6">
+    <inertial>
+      <origin xyz="0.0300245 -0.00157726 -0.0186244" rpy="0 0 0"/>
+      <mass value="0.025867"/>
+      <inertia ixx="4.07482e-06" ixy="6.9018e-07" ixz="2.36974e-07" iyy="1.42576e-05" iyz="-1.27528e-08" izz="1.13975e-05"/>
+    </inertial>
+    <!-- Part so101_link_6_parts -->
+    <visual>
+      <origin xyz="0.0300245 -0.00157726 -0.0186244" rpy="-0.165806 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_6_visual.stl"/>
+      </geometry>
+      <material name="so101_link_6_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0300245 -0.00157726 -0.0186244" rpy="-0.165806 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/merged/so101_link_6_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from so101_link_5 to so101_link_6 -->
+  <joint name="SO101_joint6" type="revolute">
+    <origin xyz="0.0189497 -0.0198719 0.0233989" rpy="1.5708 -1.3963 1.58825"/>
+    <parent link="so101_link_5"/>
+    <child link="so101_link_6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-2.88658e-14" upper="2.26893"/>
+  </joint>
+  <!-- Joint from so101_link_4 to so101_link_5 -->
+  <joint name="SO101_joint5" type="revolute">
+    <origin xyz="0.000505329 0.0615 -0.0202745" rpy="-1.5708 1.55334 3.80769e-05"/>
+    <parent link="so101_link_4"/>
+    <child link="so101_link_5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-2.87979" upper="2.87979"/>
+  </joint>
+  <!-- Joint from so101_link_3 to so101_link_4 -->
+  <joint name="SO101_joint4" type="revolute">
+    <origin xyz="-0.13485 0.00519806 -0.0007" rpy="-4.68315e-15 -5.23776e-17 1.5708"/>
+    <parent link="so101_link_3"/>
+    <child link="so101_link_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.74533" upper="1.74533"/>
+  </joint>
+  <!-- Joint from so101_link_2 to so101_link_3 -->
+  <joint name="SO101_joint3" type="revolute">
+    <origin xyz="0.11257 0.02795 -0.0007" rpy="9.96805e-17 1.15228e-14 -5.01053e-16"/>
+    <parent link="so101_link_2"/>
+    <child link="so101_link_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.31613" upper="0"/>
+  </joint>
+  <!-- Joint from so101_link_1 to so101_link_2 -->
+  <joint name="SO101_joint2" type="revolute">
+    <origin xyz="0.0189 0.0303146 -0.0914593" rpy="-1.5708 -0.00872665 -1.5708"/>
+    <parent link="so101_link_1"/>
+    <child link="so101_link_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.174533" upper="3.40339"/>
+  </joint>
+  <!-- Joint from lidar to so101_link_1 -->
+  <joint name="SO101_joint1" type="revolute">
+    <origin xyz="-0.61481 -0.547483 0.11437" rpy="1.5708 -1.06378e-08 1.40416e-08"/>
+    <parent link="lidar"/>
+    <child link="so101_link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-2.0944" upper="2.0944"/>
+  </joint>
+  <!-- Joint from base_link to lidar -->
+  <joint name="base_link_to_lidar" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+</robot>

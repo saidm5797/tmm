@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "91c926987e20f4981636347e",
+    "documentMicroversion": "8b838cc76a9ffbf4f1263f13",
+    "documentVersion": "5faa84276461db7ce5afe44a",
+    "elementId": "f3634bdb3ca2801dc653c975",
+    "fullConfiguration": "default",
+    "id": "MWcYJNSaj/LsVAf1o",
+    "isStandardContent": false,
+    "name": "waveshare_bus_servo_driver <1>",
+    "partId": "JGD",
+    "suppressed": false,
+    "type": "Part"
+}

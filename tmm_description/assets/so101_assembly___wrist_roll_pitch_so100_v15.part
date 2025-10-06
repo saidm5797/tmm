@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "f48c90a29fc3a638a78cc29d",
+    "documentMicroversion": "2afacdaf385473cb339a1456",
+    "documentVersion": "de0e8468c387b7bcbf2ffed2",
+    "elementId": "b61b615786289576093601b1",
+    "fullConfiguration": "default",
+    "id": "MS9thaZ57GfLEK5bR",
+    "isStandardContent": false,
+    "name": "SO101 Assembly - Wrist_Roll_Pitch_SO100 v15 <1>",
+    "partId": "JFH",
+    "suppressed": false,
+    "type": "Part"
+}
