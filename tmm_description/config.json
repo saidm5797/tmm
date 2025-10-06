@@ -19,6 +19,50 @@
   },
 
   // More options available in processors
+  // Override joint properties (default: {})
+  "joint_properties": {
+    // Set the properties for a specific joint
+    "left_sprocket_joint": {
+      "type": "continuous"
+    },
+    "right_sprocket_joint": {
+      "type": "continuous"
+    },
+    "gimbal_joint_1": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "gimbal_joint_2": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint1": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint2": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint3": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint4": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint5": {
+      "type": "continuous",
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    },
+    "SO101_joint6": {
+      "max_effort": 1.90,
+      "max_velocity": 4.4
+    }
+  },
+    
   // Add a dummy base link (default: false)
   "add_dummy_base_link": true,
   
